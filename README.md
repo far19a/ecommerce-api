@@ -3,16 +3,17 @@
 A Spring Boot microservices showcase that demonstrates:
 
 - Spring IoC / dependency injection across all layers
-- Java Streams for in-memory aggregations in reporting
-- Native SQL (`@Query(nativeQuery = true)`) for advanced reporting queries
-- Dockerized microservices + PostgreSQL per service
+- service-specific PostgreSQL databases
 - REST-based service-to-service communication
+- native SQL reporting queries in the reporting-service
+- Java Streams for aggregation and result shaping
+- Docker Compose orchestration for local setup
 
 ## Services
 
 - `product-service` (`:8081`) - product catalog, search, inventory validation/decrement
 - `order-service` (`:8082`) - order placement and status tracking, calls product service
-- `reporting-service` (`:8083`) - syncs completed orders, runs native SQL reports + streams
+- `reporting-service` (`:8083`) - syncs completed orders from the order service and exposes reporting endpoints
 - `api-gateway` (`:8080`) - routes `/api/products/**`, `/api/orders/**`, `/api/reports/**`
 
 ## Quick Start
@@ -20,13 +21,35 @@ A Spring Boot microservices showcase that demonstrates:
 ### Prerequisites
 
 - Docker + Docker Compose
-- Java 17 and Maven (for local non-container run)
+- Java 17 and Maven (optional, for local build without containers)
 
 ### Run with Docker Compose
 
 ```bash
 docker compose up --build
 ```
+
+The platform exposes these ports:
+
+- `8080` - API gateway
+- `8081` - product-service
+- `8082` - order-service
+- `8083` - reporting-service
+- `5433` - product PostgreSQL
+- `5434` - order PostgreSQL
+- `5435` - reporting PostgreSQL
+
+## Reporting Service Endpoints
+
+The reporting-service routes are exposed through the API gateway at `/api/reports`.
+
+- `POST /api/reports/sync` - import completed orders into the reporting database
+- `GET /api/reports/monthly-sales` - monthly sales grouped by customer and month
+- `GET /api/reports/customer-spending` - total spending per customer
+- `GET /api/reports/top-products-all-time` - all-time top selling products
+- `GET /api/reports/past-month-top-products` - top products from the last 30 days
+- `GET /api/reports/past-year-top-products` - top products from the last 12 months
+- `GET /api/reports/top-products-by-month?month=YYYY-MM` - top products for a specific month
 
 ## Example API Flow
 
@@ -53,20 +76,21 @@ curl -X POST http://localhost:8080/api/orders   -H 'Content-Type: application/js
 curl -X POST http://localhost:8080/api/reports/sync
 ```
 
-4. Read reports:
+4. Query reporting endpoints:
 
 ```bash
 curl http://localhost:8080/api/reports/monthly-sales
 curl http://localhost:8080/api/reports/customer-spending
-curl http://localhost:8080/api/reports/top-products
+curl http://localhost:8080/api/reports/top-products-all-time
+curl http://localhost:8080/api/reports/past-month-top-products
+curl http://localhost:8080/api/reports/top-products-by-month?month=2026-05
 ```
 
-## Native SQL + Streams Highlight
+## Reporting Service Highlights
 
-`reporting-service` combines native SQL and streams:
-
-- Native SQL retrieves monthly sales and top products using joins, grouping, and window functions.
-- Java Streams perform in-memory grouping, sorting, filtering, and final shaping of report payloads.
+- `reporting-service` syncs completed orders from `order-service` into its own reporting database
+- uses native SQL queries for aggregation and ranking
+- exposes multiple reporting views for monthly sales, customer spending, and top selling products
 
 ## Project Structure
 
