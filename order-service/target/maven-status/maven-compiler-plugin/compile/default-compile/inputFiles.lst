@@ -1,0 +1,13 @@
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/OrderServiceApplication.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/client/HttpProductClient.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/client/ProductClient.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/config/RestTemplateConfig.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/controller/OrderController.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/dto/OrderCreateRequest.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/dto/OrderItemRequest.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/dto/StockValidationResponse.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/model/OrderItem.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/model/OrderStatus.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/model/PurchaseOrder.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/repository/PurchaseOrderRepository.java
+/home/kou21/Projects/Personal/test-mandiri/order-service/src/main/java/com/ecommerce/order/service/OrderManagementService.java

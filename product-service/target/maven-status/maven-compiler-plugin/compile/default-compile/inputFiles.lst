@@ -1,0 +1,8 @@
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/ProductServiceApplication.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/controller/ProductController.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/dto/ProductRequest.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/dto/StockValidationRequest.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/dto/StockValidationResponse.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/model/Product.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/repository/ProductRepository.java
+/home/kou21/Projects/Personal/test-mandiri/product-service/src/main/java/com/ecommerce/product/service/ProductCatalogService.java

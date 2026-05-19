@@ -1,0 +1,13 @@
+com/ecommerce/order/repository/PurchaseOrderRepository.class
+com/ecommerce/order/service/OrderManagementService.class
+com/ecommerce/order/model/OrderStatus.class
+com/ecommerce/order/dto/StockValidationResponse.class
+com/ecommerce/order/dto/OrderCreateRequest.class
+com/ecommerce/order/controller/OrderController.class
+com/ecommerce/order/client/HttpProductClient.class
+com/ecommerce/order/client/ProductClient.class
+com/ecommerce/order/OrderServiceApplication.class
+com/ecommerce/order/config/RestTemplateConfig.class
+com/ecommerce/order/model/PurchaseOrder.class
+com/ecommerce/order/model/OrderItem.class
+com/ecommerce/order/dto/OrderItemRequest.class

@@ -1,0 +1,13 @@
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/ReportingServiceApplication.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/client/HttpOrderServiceClient.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/client/OrderServiceClient.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/config/RestTemplateConfig.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/controller/ReportingController.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/dto/MonthlyCustomerSpending.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/dto/OrderSyncResponse.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/dto/ProductStat.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/model/OrderItemReportEntity.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/model/OrderReportEntity.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/repository/OrderItemReportRepository.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/repository/OrderReportRepository.java
+/home/kou21/Projects/Personal/test-mandiri/reporting-service/src/main/java/com/ecommerce/reporting/service/BusinessReportService.java

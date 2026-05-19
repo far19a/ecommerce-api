@@ -1,0 +1,97 @@
+version: "3.9"
+
+services:
+  product-db:
+    image: postgres:16
+    container_name: product-db
+    environment:
+      POSTGRES_DB: productdb
+      POSTGRES_USER: product
+      POSTGRES_PASSWORD: product
+    ports:
+      - "5433:5432"
+    volumes:
+      - product-db-data:/var/lib/postgresql/data
+
+  order-db:
+    image: postgres:16
+    container_name: order-db
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: order
+    ports:
+      - "5434:5432"
+    volumes:
+      - order-db-data:/var/lib/postgresql/data
+
+  report-db:
+    image: postgres:16
+    container_name: report-db
+    environment:
+      POSTGRES_DB: reportdb
+      POSTGRES_USER: report
+      POSTGRES_PASSWORD: report
+    ports:
+      - "5435:5432"
+    volumes:
+      - report-db-data:/var/lib/postgresql/data
+
+  product-service:
+    build: ./product-service
+    container_name: product-service
+    environment:
+      PRODUCT_DB_URL: jdbc:postgresql://product-db:5432/productdb
+      PRODUCT_DB_USERNAME: product
+      PRODUCT_DB_PASSWORD: product
+    ports:
+      - "8081:8081"
+    depends_on:
+      - product-db
+
+  order-service:
+    build: ./order-service
+    container_name: order-service
+    environment:
+      ORDER_DB_URL: jdbc:postgresql://order-db:5432/orderdb
+      ORDER_DB_USERNAME: order
+      ORDER_DB_PASSWORD: order
+      PRODUCT_SERVICE_URL: http://product-service:8081
+    ports:
+      - "8082:8082"
+    depends_on:
+      - order-db
+      - product-service
+
+  reporting-service:
+    build: ./reporting-service
+    container_name: reporting-service
+    environment:
+      REPORT_DB_URL: jdbc:postgresql://report-db:5432/reportdb
+      REPORT_DB_USERNAME: report
+      REPORT_DB_PASSWORD: report
+      ORDER_SERVICE_URL: http://order-service:8082
+    ports:
+      - "8083:8083"
+    depends_on:
+      - report-db
+      - order-service
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    environment:
+      PRODUCT_SERVICE_URI: http://product-service:8081
+      ORDER_SERVICE_URI: http://order-service:8082
+      REPORTING_SERVICE_URI: http://reporting-service:8083
+    ports:
+      - "8080:8080"
+    depends_on:
+      - product-service
+      - order-service
+      - reporting-service
+
+volumes:
+  product-db-data:
+  order-db-data:
+  report-db-data:

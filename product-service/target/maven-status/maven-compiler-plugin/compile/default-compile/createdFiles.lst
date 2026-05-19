@@ -1,0 +1,8 @@
+com/ecommerce/product/service/ProductCatalogService.class
+com/ecommerce/product/dto/StockValidationRequest.class
+com/ecommerce/product/repository/ProductRepository.class
+com/ecommerce/product/model/Product.class
+com/ecommerce/product/dto/StockValidationResponse.class
+com/ecommerce/product/dto/ProductRequest.class
+com/ecommerce/product/controller/ProductController.class
+com/ecommerce/product/ProductServiceApplication.class

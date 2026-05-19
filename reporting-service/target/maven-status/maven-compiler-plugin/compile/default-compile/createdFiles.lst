@@ -1,0 +1,15 @@
+com/ecommerce/reporting/client/OrderServiceClient$RemoteOrder.class
+com/ecommerce/reporting/controller/ReportingController.class
+com/ecommerce/reporting/repository/OrderReportRepository.class
+com/ecommerce/reporting/ReportingServiceApplication.class
+com/ecommerce/reporting/model/OrderReportEntity.class
+com/ecommerce/reporting/service/BusinessReportService.class
+com/ecommerce/reporting/client/OrderServiceClient$RemoteOrderItem.class
+com/ecommerce/reporting/dto/ProductStat.class
+com/ecommerce/reporting/model/OrderItemReportEntity.class
+com/ecommerce/reporting/client/HttpOrderServiceClient.class
+com/ecommerce/reporting/config/RestTemplateConfig.class
+com/ecommerce/reporting/dto/MonthlyCustomerSpending.class
+com/ecommerce/reporting/repository/OrderItemReportRepository.class
+com/ecommerce/reporting/dto/OrderSyncResponse.class
+com/ecommerce/reporting/client/OrderServiceClient.class

@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: reporting-service
+  datasource:
+    url: ${REPORT_DB_URL:jdbc:postgresql://localhost:5432/reportdb}
+    username: ${REPORT_DB_USERNAME:report}
+    password: ${REPORT_DB_PASSWORD:report}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+order-service:
+  base-url: ${ORDER_SERVICE_URL:http://localhost:8082}
